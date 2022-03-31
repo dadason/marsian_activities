@@ -1,6 +1,9 @@
+from datetime import datetime
+
 import sqlalchemy
 
 from data.db_session import SqlAlchemyBase
+from sqlalchemy import orm
 
 
 class User(SqlAlchemyBase):
@@ -15,4 +18,4 @@ class User(SqlAlchemyBase):
     address = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     email = sqlalchemy.Column(sqlalchemy.String, index=True, unique=True, nullable=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    modified_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
+    modified_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.now)
