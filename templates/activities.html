@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 align="centre"> Works log </h1>
+<table>
+
+
+    <tr><th>activity title</th><th>team_leader</th><th>list of collaborators</th><th>Duration</th><th>is finished</th></tr> <!--ряд с ячейками заголовков-->
+{%for item in activities%}
+    <tr><td>{{item.job}}</td><td>{{item.team_leader}}</td><td>{{item.collaborators}}</td><td>{{item.work_size}}/td><td>{{is_finished}}</td></tr> <!--ряд с ячейками тела таблицы-->
+</table>
+{% endfor %}
+{% endblock %}
